@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EE559F9-3DA3-4B1B-B65E-A2383C933324}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Kursovaya1._1</RootNamespace>
+    <AssemblyName>Kursovaya1.1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1210.39, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1210.39\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1210.39, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1210.39\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1210.39, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1210.39\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Actor.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Actorcrew.xaml.cs">
+      <DependentUpon>Actorcrew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddActor.xaml.cs">
+      <DependentUpon>AddActor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Addcinema.xaml.cs">
+      <DependentUpon>Addcinema.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adddirector.xaml.cs">
+      <DependentUpon>Adddirector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Addfilm.xaml.cs">
+      <DependentUpon>Addfilm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddPoster.xaml.cs">
+      <DependentUpon>AddPoster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Addsession.xaml.cs">
+      <DependentUpon>Addsession.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Addzal.xaml.cs">
+      <DependentUpon>Addzal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administratenter.xaml.cs">
+      <DependentUpon>Administratenter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cafe.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cinema.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Director.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Film.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Films.xaml.cs">
+      <DependentUpon>Films.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lounge.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mainmenu.xaml.cs">
+      <DependentUpon>Mainmenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBase1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBase1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBase1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBase1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBase1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="News.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Poster.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Poster2.xaml.cs">
+      <DependentUpon>Poster2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Redactormenu.xaml.cs">
+      <DependentUpon>Redactormenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Review.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reziser.xaml.cs">
+      <DependentUpon>Reziser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Seans.xaml.cs">
+      <DependentUpon>Seans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Session.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sqq_1.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sqq_11.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sqq_2.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Treiler.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Userwindow.xaml.cs">
+      <DependentUpon>Userwindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View_1.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_2.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_3.cs">
+      <DependentUpon>ModelBase1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zal.xaml.cs">
+      <DependentUpon>Zal.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Actorcrew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddActor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Adddirector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Addfilm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddPoster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Addsession.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Addzal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administratenter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cinema.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cinema.xaml.cs">
+      <DependentUpon>Cinema.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Addcinema.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Films.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Mainmenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Poster2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Redactormenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reziser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Seans.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Userwindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Zal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <EntityDeploy Include="ModelBase1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBase1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelBase1.edmx.diagram">
+      <DependentUpon>ModelBase1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sqlzaprosi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelBase1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBase1.edmx</DependentUpon>
+      <LastGenOutput>ModelBase1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelBase1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBase1.edmx</DependentUpon>
+      <LastGenOutput>ModelBase1.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Resouce1\3.png" />
+    <Resource Include="Resouce1\icons8-cinema-64.png" />
+    <Resource Include="Resouce1\kino.jpg" />
+    <Resource Include="Resouce1\kino1.jpg" />
+    <Resource Include="Resouce1\фон1.jpg" />
+    <Resource Include="Resouce1\фон2.1.jpg" />
+    <Resource Include="Resouce1\фон3.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1210.39\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1210.39\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1210.39\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1210.39\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+</Project>

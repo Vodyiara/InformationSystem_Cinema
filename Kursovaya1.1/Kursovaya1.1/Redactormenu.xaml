@@ -1,0 +1,43 @@
+﻿<Window x:Class="Kursovaya1._1.Redactormenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovaya1._1"
+        mc:Ignorable="d"
+        Title="" Height="238.2" Width="641.8"
+         Icon="Resouce1\icons8-cinema-64.png">
+    <Grid Margin="0,0,3.4,2.6">
+        <Grid.Background>
+            <ImageBrush ImageSource="Resouce1\фон1.jpg"></ImageBrush>
+        </Grid.Background>
+
+
+
+
+
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Left">
+            <MenuItem FontWeight="Bold" FontSize="14"  Header="Меню  ">
+
+                <MenuItem FontWeight="Bold" FontSize="14" Header="Выход" Click="MenuItem_Click" />
+            </MenuItem>
+            <MenuItem FontWeight="Bold" FontSize="14" Header="Администрирование">
+
+                <Button  Content="Киноетеатр" Click="Button_Click" Width="82" />
+                <Button Content="Фильмы" Click="Button_Click_1" Width="82"/>
+                <Button Content="Сеансы" Click="Button_Click_2" Width="82"></Button>
+                <Button Content="Зал" Click="Button_Click_3" Width="82"></Button>
+                <Button Content="Актер" Click='Button_Click_4' Width="82"></Button>
+                <Button Content="Режиссер" Click='Button_Click_5' Width="82"></Button>
+                <Button Content="Постер" Click='Button_Click_6' Width="82"></Button>
+
+
+
+
+            </MenuItem>
+            <MenuItem FontWeight="Bold" FontSize="14" Header="Справка" Click="MenuItem_Click_1" />
+        </Menu>
+        <TextBlock  Background="Wheat" Height="20"  x:Name="Login" Text="Администратор:" HorizontalAlignment="Right"  Width="245" Margin="0,-2,4.8,183.2"/>
+
+    </Grid>
+</Window>

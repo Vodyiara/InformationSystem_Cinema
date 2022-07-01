@@ -1,0 +1,410 @@
+﻿<Window x:Class="Kursovaya1._1.Userwindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovaya1._1"
+        mc:Ignorable="d"
+        Title="" Height="450" Width="800"
+        Icon="Resouce1\icons8-cinema-64.png">
+
+
+
+    <Grid x:Name="Grid1" RenderTransformOrigin="0.536,0.512">
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="33.6"></RowDefinition>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Orientation="Horizontal"  VerticalAlignment="Bottom" Height="25" Width="500" HorizontalAlignment="Left" >
+            <StackPanel Orientation="Horizontal" >
+
+                <TextBlock x:Name="Poisk" Text="Введите название для поиска: " Width="300" TextAlignment="Center"></TextBlock>
+                <TextBox Width="225" Name="Txserarch" TextChanged="Txserarch_TextChanged"></TextBox>
+
+
+            </StackPanel>
+
+        </WrapPanel>
+
+
+        <Rectangle Grid.Row="2">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Resouce1\kino.jpg"></ImageBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock x:Name="Header" Text=" Кинотеатры " FontSize="35" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Margin="292,5,291.6,39.8"></TextBlock>
+
+
+
+        <ListView  MouseDoubleClick="LVcinema_MouseDoubleClick" Grid.Row="1" Name="LVcinema" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Margin="155,5.6,9.6,0" Width="auto">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" ></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="400"  >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"></RowDefinition>
+                            <RowDefinition Height="310"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Rectangle Fill="#3914AF" Height="300"></Rectangle>
+                        <Rectangle Fill="#E619E6" Height="300" Grid.Row="1"></Rectangle>
+                        <TextBlock Text="{Binding Name_cinema}" VerticalAlignment="Center" TextAlignment="Center" Width="390" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="1"></TextBlock>
+                        <TextBlock Text="{Binding City , StringFormat={} Город : {0} }" Grid.Row="2" Margin="5 5 5 15"  HorizontalAlignment="Center" FontSize="26" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding Address_cinema , StringFormat={} Адресс :{0}}" Grid.Row="3" FontSize="14" HorizontalAlignment="Right" ></TextBlock>
+                        <TextBlock Text="{Binding Telephone_number , StringFormat={} Номер_телефона : {0}}" Grid.Row="3" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding Number_films, StringFormat={} Количество_фильмов: {0}}" Grid.Row="4" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding Number_session, StringFormat={} Количество_сеансов: {0}}" Grid.Row="4" FontSize="14" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Text="{Binding Work_timecinema, StringFormat={} Время_работы: { 0}}" Grid.Row="5" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+
+
+
+                    </Grid>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView  Visibility="Collapsed"  MouseDoubleClick="LVFilm_MouseDoubleClick" Grid.Row="1" Name="LVFilm" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Margin="155,5.6,9.6,0" Width="auto">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" ></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"></RowDefinition>
+                            <RowDefinition Height="310"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+
+
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Film_name}" VerticalAlignment="Center" TextAlignment="Center" Width="390" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="1"></TextBlock>
+                        <TextBlock Text="{Binding genre , StringFormat={} Жанр : {0} }" Grid.Row="2" Margin="5 5 5 15"  HorizontalAlignment="Center" FontSize="26" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding Duration , StringFormat={} Продолжительность : {0}}" Grid.Row="3" FontSize="14" HorizontalAlignment="Right" ></TextBlock>
+                        <TextBlock Text="{Binding  Foundation_year, StringFormat={} Год : {0}}" Grid.Row="3" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding Start_distribution , StringFormat={} Начало_проакта : {0}}" Grid.Row="4" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding End_distribution, StringFormat={}  Конец_проката: {0}}" Grid.Row="4" FontSize="14" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Text="{Binding Film_rating , StringFormat={}  Рейтинг: { 0}}" Grid.Row="5" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding Film_scores , StringFormat={}  Оценки: { 0}}" Grid.Row="5" FontSize="14" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Text="{Binding Studio , StringFormat={}  Студия: { 0}}" Grid.Row="6" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+
+
+
+                    </Grid>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView  Visibility="Visible"  MouseDoubleClick="Lvactor_MouseDoubleClick" Grid.Row="1" Name="Lvactor" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Margin="155,5.6,9.6,0" Width="auto">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" ></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"></RowDefinition>
+                            <RowDefinition Height="310"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+
+
+                        </Grid.RowDefinitions>
+
+                        <Image Width="400" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Center" Margin="5">
+                            <Image.Source>
+                                <Binding Path="Imageactor">
+                                    <Binding.TargetNullValue>
+                                        <Image Source="C:\Users\User\Desktop\1.jpg"></Image>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+
+                        </Image>
+                        <TextBlock Text="{Binding FIO}" VerticalAlignment="Center" TextAlignment="Center" Width="390" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="2"></TextBlock>
+                        <TextBlock Text="{Binding Country , StringFormat={} Страна : {0} }" Grid.Row="3" Margin="5 5 5 15"  HorizontalAlignment="Left" ></TextBlock>
+                        <TextBlock Text="{Binding Birth_year , StringFormat={} Год_рождения : {0}}" Grid.Row="3" FontSize="14" HorizontalAlignment="Right" ></TextBlock>
+                        <TextBlock Text="{Binding  Gender, StringFormat={} Роль_в_фильме : {0}}" Grid.Row="4" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock Text="{Binding Filmawards , StringFormat={} Кинонаград : {0}}" Grid.Row="5" FontSize="14" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Text="{Binding Filmplayed, StringFormat={}   Фильмов: {0}}" Grid.Row="5" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+
+                    </Grid>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+
+        <ListView  Visibility="Collapsed"  MouseDoubleClick="Lvdirector_MouseDoubleClick" Grid.Row="1" Name="Lvdirector" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Margin="155,5.6,9.6,0" Width="auto">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" ></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"></RowDefinition>
+                            <RowDefinition Height="310"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+
+
+                        </Grid.RowDefinitions>
+
+                        <Image Width="400" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Center" Margin="5">
+                            <Image.Source>
+                                <Binding Path="Imagedirector">
+                                    <Binding.TargetNullValue>
+                                        <Image Source="C:\Users\User\Desktop\1.jpg"></Image>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+
+                        </Image>
+                        <TextBlock Text="{Binding FIO}" VerticalAlignment="Center" TextAlignment="Center" Width="390" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="2"></TextBlock>
+                        <TextBlock Text="{Binding Country , StringFormat={} Страна : {0} }" Grid.Row="3" Margin="5 5 5 15"  HorizontalAlignment="Left" ></TextBlock>
+                        <TextBlock Text="{Binding Birth_year , StringFormat={} Год_рождения : {0}}" Grid.Row="3" FontSize="14" HorizontalAlignment="Right" ></TextBlock>
+                        <TextBlock Text="{Binding  Gender, StringFormat={} Должность : {0}}" Grid.Row="4" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock Text="{Binding Filmawards , StringFormat={} Кинонаград : {0}}" Grid.Row="5" FontSize="14" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Text="{Binding Filmdirected, StringFormat={}   Фильмов_снято: {0}}" Grid.Row="5" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+
+                    </Grid>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView  MouseDoubleClick="LVsession_MouseDoubleClick" Grid.Row="1" Name="LVsession" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Margin="155,5.6,9.6,0" Width="auto">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" ></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"></RowDefinition>
+                            <RowDefinition Height="310"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Data_session  }" VerticalAlignment="Center" TextAlignment="Center" Width="390" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="30" Grid.Row="1"></TextBlock>
+                        <TextBlock Text="{Binding Session_time, StringFormat={} Время : {0}  }" Grid.Row="2" Margin="5 5 5 15"  HorizontalAlignment="Center" FontSize="26" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding Lounge_number, StringFormat={} Номер_зала : {0}}" Grid.Row="3" Margin="5 5 5 15"  HorizontalAlignment="Center" FontSize="26" FontWeight="Bold"></TextBlock>
+
+
+
+                    </Grid>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <ListView  Visibility="Collapsed"  MouseDoubleClick="Lvposter_MouseDoubleClick" Grid.Row="1" Name="Lvposter" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Margin="155,5.6,9.6,0" Width="auto">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" ></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"></RowDefinition>
+                            <RowDefinition Height="310"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+
+
+                        </Grid.RowDefinitions>
+
+                        <Image Width="400" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Center" Margin="5">
+                            <Image.Source>
+                                <Binding Path="Poster1">
+                                   
+                                </Binding>
+                            </Image.Source>
+
+                        </Image>
+                        <TextBlock Text="{Binding Author, StringFormat={} Автор_постера : {0} }" VerticalAlignment="Center" TextAlignment="Center" Width="390" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="2"></TextBlock>
+                        <TextBlock Text="{Binding Datamaking , StringFormat={} Дата : {0} }" Grid.Row="3" Margin="5 5 5 15"  HorizontalAlignment="Left" FontSize="26" FontWeight="Bold"></TextBlock>
+
+
+                    </Grid>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <ListView  Visibility="Collapsed"  MouseDoubleClick="Lvdirector_MouseDoubleClick" Grid.Row="1" Name="LVlounge" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Margin="155,5.6,9.6,0" Width="auto">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" ></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"></RowDefinition>
+                            <RowDefinition Height="310"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+
+
+
+                        </Grid.RowDefinitions>
+
+
+                        <TextBlock Text="{Binding Row, StringFormat=Ряд : {0} }" VerticalAlignment="Center" TextAlignment="Center" Width="390" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="2"></TextBlock>
+                        <TextBlock Text="{Binding Seat , StringFormat={} Дата : {0} }" Grid.Row="3" Margin="5 5 5 15"  HorizontalAlignment="Center" FontSize="26" ></TextBlock>
+                        <TextBlock Text="{Binding Price , StringFormat={} Цена : {0:N2} RUB }" Grid.Row="4" Margin="5 5 5 15"  HorizontalAlignment="Center" FontSize="26" FontWeight="Bold"></TextBlock>
+
+
+                    </Grid>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView  Visibility="Collapsed"  Grid.Row="1" Name="LVFilmsses" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Margin="155,5.6,9.6,0" Width="auto">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" ></WrapPanel>
+
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <Grid Margin="20" Width="400">
+
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="70"></RowDefinition>
+                            <RowDefinition Height="310"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+
+
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="{Binding Film_name}" VerticalAlignment="Center" TextAlignment="Center" Width="390" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="1"></TextBlock>
+                        <TextBlock Text="{Binding genre , StringFormat={} Жанр : {0} }" Grid.Row="2" Margin="5 5 5 15"  HorizontalAlignment="Center" FontSize="26" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding Duration , StringFormat={} Продолжительность : {0}}" Grid.Row="3" FontSize="14" HorizontalAlignment="Right" ></TextBlock>
+                        <TextBlock Text="{Binding  Foundation_year, StringFormat={} Год : {0}}" Grid.Row="3" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding Start_distribution , StringFormat={} Начало_проакта : {0}}" Grid.Row="4" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding End_distribution, StringFormat={}  Конец_проката: {0}}" Grid.Row="4" FontSize="14" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Text="{Binding Film_rating , StringFormat={}  Рейтинг: { 0}}" Grid.Row="5" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding Film_scores , StringFormat={}  Оценки: { 0}}" Grid.Row="5" FontSize="14" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Text="{Binding Studio , StringFormat={}  Студия: { 0}}" Grid.Row="6" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+
+
+
+                    </Grid>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Grid.Row="1" Background="Blue" HorizontalAlignment="Left" Width="135" Margin="0,5.6,0,4">
+            <Grid x:Name="panelheader" VerticalAlignment="Top" Height="50" MouseDown="panelheader_MouseDown" >
+
+            </Grid>
+            <Grid x:Name="sidePanel" HorizontalAlignment="Left" Width="150">
+                <StackPanel>
+                    <Grid Height="145" Background="White" Margin="0,0,10.4,0">
+                        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Background="Transparent" BorderBrush="Transparent" Click="Button_Click" Height="20">
+                            <Image Source="Resouce1\3.png" RenderTransformOrigin="0.5,-1.31"></Image>
+                        </Button>
+
+
+                    </Grid>
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderBrush="Transparent" Background="Transparent" Foreground="White">
+                        <ListViewItem Height="30" >
+                            <StackPanel Orientation="Horizontal" >
+                                <Button Content="Кинотетры"  Width="114" RenderTransformOrigin="1.27,1.427" Click="Button_Click_1"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontFamily="Century Gothics" BorderBrush="Transparent" Background="Transparent" Foreground="White">
+                        <ListViewItem Height="30">
+                            <StackPanel Orientation="Horizontal" Width="118">
+                                <Button Content="Фильмы " Width="114" RenderTransformOrigin="1.27,1.427" Click="Button_Click_2"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontFamily="Century Gothics" BorderBrush="Transparent" Background="Transparent" Foreground="White">
+                        <ListViewItem Height="30">
+                            <StackPanel Orientation="Horizontal" Width="118">
+                                <Button Content="Справка " Width="114" RenderTransformOrigin="1.27,1.427" Click="Button_Click_2"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontFamily="Century Gothics" BorderBrush="Transparent" Background="Transparent" Foreground="White">
+                        <ListViewItem Height="30">
+                            <StackPanel Orientation="Horizontal" Width="118">
+                                <Button Content="Выход " Width="114" RenderTransformOrigin="1.27,1.427" Click="Button_Click_3"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+        <Calendar x:Name="Calend" HorizontalAlignment="Right" Visibility="Collapsed" MouseDoubleClick="Calend_MouseDoubleClick"  VerticalAlignment="Top" Height="169" Width="169" Grid.RowSpan="2"/>
+
+    </Grid>
+</Window>

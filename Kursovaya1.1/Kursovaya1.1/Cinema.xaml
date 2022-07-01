@@ -1,0 +1,57 @@
+﻿<Window x:Class="Kursovaya1._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovaya1._1"
+        mc:Ignorable="d"
+        Title="Редактор кинотеатра" Height="376.4" Width="938.1" IsVisibleChanged="Window_IsVisibleChanged
+        " 
+        Icon="Resouce1\icons8-cinema-64.png">
+    <Grid>
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="1" Fill="#f4bf06"></Rectangle>
+
+
+        <DataGrid x:Name="DgridCinema" Grid.ColumnSpan="2" Margin="0,-1,0,1" RenderTransformOrigin="0.5,0.5" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Width="932" >
+
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.592"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название кинотеатра" Binding="{Binding Name_cinema}" Width="150"></DataGridTextColumn>
+                <DataGridTextColumn Header="Город" Binding="{Binding City}" Width="70"></DataGridTextColumn>
+                <DataGridTextColumn Header="Адресс кинотеатра" Binding="{Binding Address_cinema}" Width="130"></DataGridTextColumn>
+                <DataGridTextColumn Header="Телефон кинотеатра" Binding="{Binding Telephone_number}" Width="130"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество фильмов" Binding="{Binding Number_films}" Width="130"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количетво сеансов" Binding="{Binding Number_session}" Width="130"></DataGridTextColumn>
+                <DataGridTextColumn Header="Время работы" Binding="{Binding Work_timecinema}" Width="130"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnEdit" Content="Редкатировать" Click="BtnEdit_Click"></Button>
+
+                        </DataTemplate>
+
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Удалить" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left" Click="Button_Click" Margin="859,309,0,0" Width="79" Grid.RowSpan="2" />
+        <Button Content="Добвавить"  FontWeight="Bold" FontSize="14" HorizontalAlignment="LEft" Click="Button_Click_1" Width="70" Margin="0,2,0,0.4" Grid.Row="1"/>
+        <Button Content="Экспорт" FontWeight="Bold" FontSize="14"  Grid.Row="1" HorizontalAlignment="Center" Click="Button_Click_2" Grid.Column="1" Width="95" Margin="415,0,422,0.4"></Button>
+    </Grid>
+</Window>

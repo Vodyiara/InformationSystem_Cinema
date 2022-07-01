@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Kursovaya1._1.KursovaiaEntities1">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECANAAACAAgAAgACAAAABEEAAACAAABCgAEAAAgAA=</HashCode>
+      <FileName>ModelBase1.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kursovaya1._1.Actor">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAAAJAAAACAAACAAAAAAAIABAAAAAACAAAAACA=</HashCode>
+      <FileName>Actor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kursovaya1._1.Cinema">
+    <Position X="4" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAARIACAAIAAEAAAgACAAAAAAAACAgQA=</HashCode>
+      <FileName>Cinema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kursovaya1._1.Director">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAACAAACAAAAAQAIABAAAAAAGAAAAASA=</HashCode>
+      <FileName>Director.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kursovaya1._1.Film">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAFAAAgECgAAAACAAoABCCggAAAgAAAQCAAAAAAA=</HashCode>
+      <FileName>Film.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kursovaya1._1.Lounge">
+    <Position X="2.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAQAAAQAAAAAAQAAAAAAAAgAAAAAAAAAQAAA=</HashCode>
+      <FileName>Lounge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kursovaya1._1.Poster" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAABABAAgAAAAAMAAIAACCABAUACAABAAAg=</HashCode>
+      <FileName>Poster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Kursovaya1._1.Session">
+    <Position X="11.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAEAAAAAAAAAIAAAAAAABIAAAAgCAAAQAAA=</HashCode>
+      <FileName>Session.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kursovaya1._1.sysdiagram">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAQAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>sysdiagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kursovaya1._1.View_1">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQIAAAAIAAAAAgAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>View_1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kursovaya1._1.View_2">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAQIAAAAAAAAAAgAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>View_2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

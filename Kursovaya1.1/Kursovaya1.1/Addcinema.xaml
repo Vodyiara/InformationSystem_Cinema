@@ -1,0 +1,54 @@
+﻿<Window x:Class="Kursovaya1._1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovaya1._1"
+        mc:Ignorable="d"
+        Title="Добавление кинотеатра" Height="441.4" Width="800"
+         Icon="Resouce1\icons8-cinema-64.png">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resouce1\фон3.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Background="Wheat" Text="Название кинотеатра" Grid.Row="0" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Background="Wheat" Text="Город" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+        <TextBlock Background="Wheat" Text="Адресс" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+        <TextBlock Background="Wheat" Text="Телефон кинотеатра" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+        <TextBlock Background="Wheat" Text="Количество фильмов" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"> </TextBlock>
+        <TextBlock Background="Wheat" Text="Количество сеансов" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+        <TextBlock Background="Wheat" Text="Время работы" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+
+        <TextBox Background="LightGray"  Text="{Binding Name_cinema}" MaxLength="100" Grid.Column="1" Height="30"></TextBox>
+        <ComboBox Background="LightGray" ItemsSource="{Binding City}" x:Name="CB"
+          TextBoxBase.TextChanged="CB_TextChanged"
+          IsTextSearchEnabled="False" IsEditable="True"
+          VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+        <TextBox Background="LightGray" Text="{Binding Address_cinema}" Grid.Column="1" Height="30" Grid.Row="2"></TextBox>
+        <TextBox Background="LightGray"  Text="{Binding Telephone_number}" Grid.Column="1" Height="30" Grid.Row="3"></TextBox>
+        <TextBox Background="LightGray"  Text="{Binding Number_films}" Grid.Column="1" Height="30" Grid.Row="4"></TextBox>
+        <TextBox Background="LightGray" Text="{Binding Number_session}" Grid.Column="1" Height="30" Grid.Row="5"></TextBox>
+        <TextBox Background="LightGray" Text="{Binding Work_timecinema}" Grid.Column="1" Height="30" Grid.Row="6"></TextBox>
+
+
+
+        <Button FontWeight="Bold" FontSize="14" Content="Сохранить" Grid.Column="1" Margin="195,10.2,298.6,11" Grid.Row="7" Width="100" Height="30" Name="BtnSave" Click="BtnSave_Click"></Button>
+        <Button FontWeight="Bold" FontSize="14" Content="Отмена" Grid.Column="1" HorizontalAlignment="Left" Margin="340,10.2,0,0" Grid.Row="7" VerticalAlignment="Top" Width="100" Height="30" RenderTransformOrigin="0.45,0.107" Click="Button_Click"/>
+
+    </Grid>
+</Window>

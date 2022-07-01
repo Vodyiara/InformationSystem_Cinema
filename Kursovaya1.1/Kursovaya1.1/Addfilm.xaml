@@ -1,0 +1,62 @@
+﻿<Window x:Class="Kursovaya1._1.Addfilm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovaya1._1"
+        mc:Ignorable="d"
+        Title="Addfilm" Height="705.4" Width="863.2"
+         Icon="Resouce1\icons8-cinema-64.png">
+    <Grid  Height="625" VerticalAlignment="Top" Margin="-2,0,-0.2,0">
+        <Grid.Background>
+            <ImageBrush ImageSource="Resouce1\фон3.jpg"></ImageBrush>
+        </Grid.Background>
+        
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="225*"/>
+            <ColumnDefinition Width="569*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="30*"/>
+
+
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+
+        </Grid.RowDefinitions>
+        <TextBlock Background="Wheat" FontWeight="Bold" FontSize="14"  HorizontalAlignment="Center"  VerticalAlignment="Center" Text="Название фильма" Grid.Row="0" ></TextBlock>
+        <TextBlock Background="Wheat" FontWeight="Bold" FontSize="14"  HorizontalAlignment="Center"  VerticalAlignment="Center" Text="Продолжительность" Grid.Row="1" />
+        <TextBlock Background="Wheat"  FontWeight="Bold" FontSize="14"  HorizontalAlignment="Center"  VerticalAlignment="Center" Text="Жанр" Grid.Row="2" Margin="0,0.2,0.4,0.4"></TextBlock>
+        <TextBlock Background="Wheat" FontWeight="Bold" FontSize="14"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Text="Год выпуска" Grid.Row="3" Margin="0,0.6,0.4,0.4"></TextBlock>
+        <TextBlock Background="Wheat" FontWeight="Bold" FontSize="14"  HorizontalAlignment="Center"  VerticalAlignment="Center" Text="Студия" Grid.Row="4" ></TextBlock>
+
+        <TextBlock Background="Wheat" FontWeight="Bold" FontSize="14"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Text="Рейтинг фильма" Grid.Row="5"></TextBlock>
+        <TextBlock Background="Wheat" FontWeight="Bold" FontSize="14"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Text="Дата начала проката" Grid.Row="6" ></TextBlock>
+        <TextBlock Background="Wheat" FontWeight="Bold" FontSize="14"  HorizontalAlignment="Center"  VerticalAlignment="Center" Text="Конец проката" Grid.Row="7" Margin="0,9.8,0.4,2.4"/>
+        <TextBlock Background="Wheat" FontWeight="Bold" FontSize="14"  HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="8" Margin="0,4.8,0.4,-0.2"><Run Text="Оценка фильма"/><InlineUIContainer>
+               
+            </InlineUIContainer></TextBlock>
+
+        <TextBox Background="LightGray" Height="35" Text="{Binding Film_name}" Grid.Row="0" Grid.ColumnSpan="2" Margin="242,11,-0.2,10.6"  />
+        <TextBox Background="LightGray" Height="35"  Text="{Binding Duration}" Grid.Row="1" Grid.ColumnSpan="2" Margin="242,13.4,-0.2,13.8"  />
+        <TextBox Background="LightGray" Height="35"  Text="{Binding genre}" Grid.Row="2" Grid.ColumnSpan="2" Margin="242,13.2,-0.2,13.4"  />
+        <TextBox Background="LightGray" Height="35"  Text="{Binding Foundation_year}" Grid.Row="3" Grid.ColumnSpan="2" Margin="242,8.6,-0.2,7.4" />
+        <TextBox Background="LightGray" Height="35"  Text="{Binding Studio}" Grid.Row="4" Grid.ColumnSpan="2" Margin="242,11.6,-0.2,13.2"  />
+
+        <TextBox Background="LightGray" Height="35"  Text="{Binding Film_rating}" Grid.Row="5" Grid.ColumnSpan="2" Margin="242,11.6,-0.2,7.4"  />
+        <TextBox Background="LightGray" Height="35"  Text="{Binding Start_distribution}" Grid.Row="6" Grid.ColumnSpan="2" Margin="242,14.6,-0.2,13.2"  />
+        <TextBox Background="LightGray" Height="35"  Text="{Binding End_distribution}" Grid.Row="7" Grid.ColumnSpan="2" Margin="242,9.8,-0.2,3.4"  />
+        <TextBox Background="LightGray" Height="35"  Text="{Binding Film_scores}" Grid.Row="11" Grid.ColumnSpan="2" Margin="242,9.8,-0.2,10.8"  />
+        <Button FontWeight="Bold" FontSize="14"  Content="Сохранить" HorizontalAlignment="Left" Margin="93.6,89,0,-38.6" Grid.Row="8" VerticalAlignment="Center" Width="75" Click="Button_Click" Grid.Column="1" />
+        <Button FontWeight="Bold" FontSize="14"  Content="Отмена" HorizontalAlignment="Left" Margin="253.6,90,0,-39.6" Grid.Row="8" VerticalAlignment="Center" Width="75" Click="Button_Click_1" Grid.Column="1"/>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KursovaiaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Actor">
+    <Key>
+      <PropertyRef Name="ID_director" />
+    </Key>
+    <Property Name="ID_director" Type="Int32" Nullable="false" />
+    <Property Name="ID_film" Type="Int32" Nullable="false" />
+    <Property Name="FIO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Birth_year" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Filmplayed" Type="Int32" />
+    <Property Name="Filmawards" Type="Int32" />
+    <NavigationProperty Name="Film" Relationship="Self.FK_Actor_Film" FromRole="Actor" ToRole="Film" />
+  </EntityType>
+  <EntityType Name="Cafe">
+    <Key>
+      <PropertyRef Name="ID_cafe" />
+    </Key>
+    <Property Name="ID_cafe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number_snactypes" Type="Int32" />
+    <Property Name="Number_drinkstypes" Type="Int32" />
+    <Property Name="Number_workers" Type="Int32" />
+    <Property Name="Work_timecafe" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_cinema" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cinema" Relationship="Self.FK_Cafe_Cinema1" FromRole="Cafe" ToRole="Cinema" />
+  </EntityType>
+  <EntityType Name="Cinema">
+    <Key>
+      <PropertyRef Name="ID_cinema" />
+    </Key>
+    <Property Name="ID_cinema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_cinema" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address_cinema" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telephone_number" Type="Int32" Nullable="false" />
+    <Property Name="Number_films" Type="Int32" />
+    <Property Name="Number_session" Type="Int32" />
+    <Property Name="Work_timecinema" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cafe" Relationship="Self.FK_Cafe_Cinema1" FromRole="Cinema" ToRole="Cafe" />
+    <NavigationProperty Name="Film" Relationship="Self.FK_Film_Cinema" FromRole="Cinema" ToRole="Film" />
+    <NavigationProperty Name="Session" Relationship="Self.FK_Session_Cinema" FromRole="Cinema" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="Director">
+    <Key>
+      <PropertyRef Name="ID_actor" />
+    </Key>
+    <Property Name="ID_actor" Type="Int32" Nullable="false" />
+    <Property Name="ID_film" Type="Int32" Nullable="false" />
+    <Property Name="FIO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Birth_year" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Filmdirected" Type="Int32" />
+    <Property Name="Filmawards" Type="Int32" />
+    <NavigationProperty Name="Film" Relationship="Self.FK_Director_Film" FromRole="Director" ToRole="Film" />
+  </EntityType>
+  <EntityType Name="Film">
+    <Key>
+      <PropertyRef Name="ID_film" />
+    </Key>
+    <Property Name="ID_film" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_cinema" Type="Int32" Nullable="false" />
+    <Property Name="Film_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Duration" Type="Int32" Nullable="false" />
+    <Property Name="genre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Foundation_year" Type="Int32" />
+    <Property Name="Studio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name_of_actoractress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Director_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Film_rating" Type="Int32" Nullable="false" />
+    <Property Name="Start_distribution" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="End_distribution" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Film_scores" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Actor" Relationship="Self.FK_Actor_Film" FromRole="Film" ToRole="Actor" />
+    <NavigationProperty Name="Cinema" Relationship="Self.FK_Film_Cinema" FromRole="Film" ToRole="Cinema" />
+    <NavigationProperty Name="Director" Relationship="Self.FK_Director_Film" FromRole="Film" ToRole="Director" />
+    <NavigationProperty Name="News" Relationship="Self.FK_News_Film" FromRole="Film" ToRole="News" />
+    <NavigationProperty Name="Poster" Relationship="Self.FK_Poster_Film" FromRole="Film" ToRole="Poster" />
+    <NavigationProperty Name="Review" Relationship="Self.FK_Review_Film" FromRole="Film" ToRole="Review" />
+    <NavigationProperty Name="Session" Relationship="Self.FK_Session_Film" FromRole="Film" ToRole="Session" />
+    <NavigationProperty Name="Treiler" Relationship="Self.FK_Treiler_Film" FromRole="Film" ToRole="Treiler" />
+  </EntityType>
+  <EntityType Name="Lounge">
+    <Key>
+      <PropertyRef Name="Lounge_number" />
+    </Key>
+    <Property Name="Lounge_number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Row" Type="Int32" Nullable="false" />
+    <Property Name="Seat" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="ID_session" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Session" Relationship="Self.FK_Lounge_Session" FromRole="Lounge" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="ID_news" />
+    </Key>
+    <Property Name="ID_news" Type="Int32" Nullable="false" />
+    <Property Name="ID_film" Type="Int32" Nullable="false" />
+    <Property Name="News1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Film" Relationship="Self.FK_News_Film" FromRole="News" ToRole="Film" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="ID_reviews" />
+    </Key>
+    <Property Name="ID_reviews" Type="Int32" Nullable="false" />
+    <Property Name="ID_film" Type="Int32" Nullable="false" />
+    <Property Name="Reviews" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Film" Relationship="Self.FK_Review_Film" FromRole="Review" ToRole="Film" />
+  </EntityType>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="ID_session" />
+    </Key>
+    <Property Name="ID_session" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_film" Type="Int32" Nullable="false" />
+    <Property Name="ID_cinema" Type="Int32" Nullable="false" />
+    <Property Name="Session_time" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Lounge_number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cinema" Relationship="Self.FK_Session_Cinema" FromRole="Session" ToRole="Cinema" />
+    <NavigationProperty Name="Film" Relationship="Self.FK_Session_Film" FromRole="Session" ToRole="Film" />
+    <NavigationProperty Name="Lounge" Relationship="Self.FK_Lounge_Session" FromRole="Session" ToRole="Lounge" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Treiler">
+    <Key>
+      <PropertyRef Name="ID_treiler" />
+    </Key>
+    <Property Name="ID_treiler" Type="Int32" Nullable="false" />
+    <Property Name="ID_film" Type="Int32" Nullable="false" />
+    <Property Name="Treiler1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Film" Relationship="Self.FK_Treiler_Film" FromRole="Treiler" ToRole="Film" />
+  </EntityType>
+  <EntityType Name="Poster">
+    <Key>
+      <PropertyRef Name="ID_poster" />
+      <PropertyRef Name="ID_film" />
+      <PropertyRef Name="Poster1" />
+    </Key>
+    <Property Name="ID_poster" Type="Int32" Nullable="false" />
+    <Property Name="ID_film" Type="Int32" Nullable="false" />
+    <Property Name="Poster1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Film" Relationship="Self.FK_Poster_Film" FromRole="Poster" ToRole="Film" />
+  </EntityType>
+  <Association Name="FK_Actor_Film">
+    <End Role="Film" Type="Self.Film" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Actor" Type="Self.Actor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="ID_film" />
+      </Principal>
+      <Dependent Role="Actor">
+        <PropertyRef Name="ID_film" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cafe_Cinema1">
+    <End Role="Cinema" Type="Self.Cinema" Multiplicity="1" />
+    <End Role="Cafe" Type="Self.Cafe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cinema">
+        <PropertyRef Name="ID_cinema" />
+      </Principal>
+      <Dependent Role="Cafe">
+        <PropertyRef Name="ID_cinema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Film_Cinema">
+    <End Role="Cinema" Type="Self.Cinema" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Film" Type="Self.Film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cinema">
+        <PropertyRef Name="ID_cinema" />
+      </Principal>
+      <Dependent Role="Film">
+        <PropertyRef Name="ID_cinema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_Cinema">
+    <End Role="Cinema" Type="Self.Cinema" Multiplicity="1" />
+    <End Role="Session" Type="Self.Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cinema">
+        <PropertyRef Name="ID_cinema" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="ID_cinema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Director_Film">
+    <End Role="Film" Type="Self.Film" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Director" Type="Self.Director" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="ID_film" />
+      </Principal>
+      <Dependent Role="Director">
+        <PropertyRef Name="ID_film" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Film">
+    <End Role="Film" Type="Self.Film" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="ID_film" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="ID_film" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Poster_Film">
+    <End Role="Film" Type="Self.Film" Multiplicity="1" />
+    <End Role="Poster" Type="Self.Poster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="ID_film" />
+      </Principal>
+      <Dependent Role="Poster">
+        <PropertyRef Name="ID_film" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_Film">
+    <End Role="Film" Type="Self.Film" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="ID_film" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="ID_film" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_Film">
+    <End Role="Film" Type="Self.Film" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Session" Type="Self.Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="ID_film" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="ID_film" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treiler_Film">
+    <End Role="Film" Type="Self.Film" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Treiler" Type="Self.Treiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="ID_film" />
+      </Principal>
+      <Dependent Role="Treiler">
+        <PropertyRef Name="ID_film" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lounge_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Lounge" Type="Self.Lounge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="ID_session" />
+      </Principal>
+      <Dependent Role="Lounge">
+        <PropertyRef Name="ID_session" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KursovaiaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Actor" EntityType="Self.Actor" />
+    <EntitySet Name="Cafe" EntityType="Self.Cafe" />
+    <EntitySet Name="Cinema" EntityType="Self.Cinema" />
+    <EntitySet Name="Director" EntityType="Self.Director" />
+    <EntitySet Name="Film" EntityType="Self.Film" />
+    <EntitySet Name="Lounge" EntityType="Self.Lounge" />
+    <EntitySet Name="News" EntityType="Self.News" />
+    <EntitySet Name="Review" EntityType="Self.Review" />
+    <EntitySet Name="Session" EntityType="Self.Session" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Treiler" EntityType="Self.Treiler" />
+    <EntitySet Name="Poster" EntityType="Self.Poster" />
+    <AssociationSet Name="FK_Actor_Film" Association="Self.FK_Actor_Film">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="Actor" EntitySet="Actor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cafe_Cinema1" Association="Self.FK_Cafe_Cinema1">
+      <End Role="Cinema" EntitySet="Cinema" />
+      <End Role="Cafe" EntitySet="Cafe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Film_Cinema" Association="Self.FK_Film_Cinema">
+      <End Role="Cinema" EntitySet="Cinema" />
+      <End Role="Film" EntitySet="Film" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_Cinema" Association="Self.FK_Session_Cinema">
+      <End Role="Cinema" EntitySet="Cinema" />
+      <End Role="Session" EntitySet="Session" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Director_Film" Association="Self.FK_Director_Film">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="Director" EntitySet="Director" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Film" Association="Self.FK_News_Film">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Poster_Film" Association="Self.FK_Poster_Film">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="Poster" EntitySet="Poster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_Film" Association="Self.FK_Review_Film">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_Film" Association="Self.FK_Session_Film">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="Session" EntitySet="Session" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treiler_Film" Association="Self.FK_Treiler_Film">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="Treiler" EntitySet="Treiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lounge_Session" Association="Self.FK_Lounge_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="Lounge" EntitySet="Lounge" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
